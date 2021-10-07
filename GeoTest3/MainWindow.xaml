@@ -1,0 +1,45 @@
+﻿<Window x:Class="GeoTest3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeoTest3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="900">
+    <StackPanel>
+        <TextBlock FontSize="25" HorizontalAlignment="Center">Расчет коммисионных</TextBlock>
+        <DockPanel Margin="10,10,10,0">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                <TextBlock TextWrapping="Wrap" Width="290" FontSize="20">Введите/выберите фамилию продавца</TextBlock>
+                <ComboBox x:Name="Saller" Height="30" Margin="10,0,0,0" Width="150">
+                    <ComboBoxItem>Чупашева А.И</ComboBoxItem>
+                    <ComboBoxItem>Иванов А.В</ComboBoxItem>
+                    <ComboBoxItem>Кривцов О.П</ComboBoxItem>
+                    <ComboBoxItem>Янаева Э.С</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <Button Width="100" Background="Transparent"  HorizontalAlignment="Right" Margin="0,0,0,0" DockPanel.Dock="Right" Click="Button_Click">
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Рассчет коммисионных"></TextBlock>
+            </Button>
+        </DockPanel>
+
+        <DockPanel  Margin="10,50,10,0">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                <TextBlock TextAlignment="Center"  TextWrapping="Wrap" Width="200" FontSize="20" >Введите дату приема продавца на работу</TextBlock>
+                <DatePicker x:Name="DateHire" Height="30" Width="140" Margin="40,0,0,0"></DatePicker>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="50,0,0,0" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" Margin="0,0,10,0" FontSize="20" >Коммисионные продавца</TextBlock>
+                <TextBox x:Name="UserName" IsEnabled="True" HorizontalAlignment="Right" TextWrapping="Wrap"  TextAlignment="Center" FontSize="15" VerticalAlignment="Center"  Text="Фамилия продавца"></TextBox>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel  Margin="10,50,10,0">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left">
+                <TextBlock TextAlignment="Center"  TextWrapping="Wrap" Width="200" FontSize="20" >Введите среднюю дневную выручку продавца
+                </TextBlock>
+                <TextBox PreviewTextInput="Money_PreviewTextInput" x:Name="Money" Height="30" Width="140" Margin="40,0,0,0"></TextBox>
+            </StackPanel>
+            <TextBox x:Name="Result" IsEnabled="True"  DockPanel.Dock="Right" Width="150" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="15" ></TextBox>
+        </DockPanel>
+    </StackPanel>
+</Window>
